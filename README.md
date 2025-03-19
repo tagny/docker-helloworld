@@ -14,6 +14,15 @@ docker pull karthequian/helloworld:latest
 To run this image:
 ```
 docker run -p 80:80/tcp "karthequian/helloworld:latest"
+
+docker run -v /opt/srv -p 8080:80 --name docker-helloword --rm tagny/docker-helloworld:1.0
+
+docker run -v /opt/srv -P --name docker-helloword --rm tagny/docker-helloworld:1.0 &
+```
+
+To execute commands
+```
+docker exec -it docker-helloworld sh
 ```
 
 Dockerhub link: https://hub.docker.com/r/karthequian/helloworld/
