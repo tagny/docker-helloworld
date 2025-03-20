@@ -1,9 +1,9 @@
- name: Build and Push Docker Image
- on:
+name: Build and Push Docker Image
+on:
   push:
     branches:
       - master
- jobs:
+jobs:
   build:
     runs-on: ubuntu-latest
     steps:
@@ -11,10 +11,13 @@
       uses: actions/checkout@v3
 
     - name: Configure AWS credentials
+      env:
+        AWS_REGION: ${{ env.AWS_REGION }}
+        ECR_ROLE: ${{ secrets.AWS_ECR_ROLE_ARN }}
       uses: aws-actions/configure-aws-credentials@v4 # More information on this action can be found below in the 'AWS Credentials' section
       with:
-        role-to-assume: ${{ secrets.AWS_ECR_ROLE_ARN }}
-        aws-region: ${{ env.AWS_REGION }}
+        role-to-assume: $ECR_ROLE
+        aws-region: $AWS_REGION
 
     - name: Login to Amazon ECR
       id: login-ecr
