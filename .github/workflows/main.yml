@@ -22,9 +22,9 @@
       with:
         push: true
         tags: ${{ env.AWS_REGION }}/tagny/docker-helloworld:${{ env.GITHUB_SHA }}
-    - name: Push Docker image to AWS ECR
-      uses: aws-actions/amazon-ecr-push-action@v1
-      with:
-        region: ${{ env.AWS_REGION }}
-        registry-url: ${{ env.AWS_REGISTRY_URL }}
-        tags: ${{ env.AWS_REGION }}/tagny/docker-helloworld:${{ env.GITHUB_SHA }}
+    # - name: Push Docker image to AWS ECR
+    #   uses: aws-actions/amazon-ecr-push-action@v1
+    #   with:
+    #     region: ${{ env.AWS_REGION }}
+    #     registry-url: ${{ env.AWS_REGISTRY_URL }}
+    #     tags: ${{ env.AWS_REGION }}/tagny/docker-helloworld:${{ env.GITHUB_SHA }}
