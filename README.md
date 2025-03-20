@@ -27,4 +27,4 @@ docker exec -it docker-helloworld sh
 
 Dockerhub link: https://hub.docker.com/r/karthequian/helloworld/
 
-Github link: https://github.com/karthequian/docker-helloworld
+Github link: https://github.com/tagny/docker-helloworld
